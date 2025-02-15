@@ -6,7 +6,7 @@ function Footer() {
     let data = new Date().getFullYear()
 
     return (
-        <div className='flex justify-center items-center bg-indigo-900 text-white h-40'>
+        <div className='flex justify-center items-center bg-gradient-to-r from-gray-800 to-gray-500 text-white h-40'>
             <div className='container flex flex-col items-center py-4'>
                 <p className='text-xl font-bold'>
                     Blog Pessoal Vinicius Oliveira | Copyright: {data}
