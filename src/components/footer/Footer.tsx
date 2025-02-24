@@ -1,12 +1,22 @@
 import { LinkedinLogo, InstagramLogo, GithubLogo } from '@phosphor-icons/react'
-import React from 'react'
+import React, { ReactNode, useContext } from 'react'
+import { AuthContext } from '../../contexts/AuthContext'
+
+
 
 
 function Footer() {
+
     let data = new Date().getFullYear()
 
-    return (
-        <div className='flex justify-center items-center bg-gradient-to-r from-gray-800 to-gray-500 text-white h-30'>
+    const { usuario } = useContext(AuthContext)
+
+    let component: ReactNode
+
+    if (usuario.token !== "") {
+
+        component = (
+            <div className='flex justify-center items-center bg-gradient-to-r from-gray-800 to-gray-500 text-white h-30'>
             <div className='container flex flex-col items-center py-4'>
                 <p className='text-md font-bold'>
                     Blog Pessoal Vinicius Oliveira | Copyright: {data}
@@ -31,6 +41,14 @@ function Footer() {
             </div>
 
         </div>
+            
+        )
+    }   
+
+    return (
+        <>
+            {component}
+        </>        
     )
 }
 
